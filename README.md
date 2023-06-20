@@ -8,7 +8,7 @@ The websites are:
 5. MIMP (mimp.baderlab.org) - 192.168.81.141
 6. cytoscape wiki (wikiold.cytoscape.org) - 192.168.81.131
 
-Each site has been converted over to a docker and is now running newer versions of software.  All servers are running on ubuntu OS.
+Each site has been converted over to a docker and is now running newer versions of software.  All servers are running on ubuntu OS and using APT for package managment.
 
 The corresponding dockers are:
 1. POW - [iweinberger/pow](https://hub.docker.com/repository/docker/iweinberger/pow/general)
@@ -18,7 +18,8 @@ The corresponding dockers are:
 6. MIMP - uncompleted
 7. cytoscape wiki - uncompleted
 
-Each docker can be downloaded and run through Docker user the command `docker run -ditp 80:80 **container_name**`
+Each docker can be downloaded and run through Docker user the command `docker run -ditp 80:80 **container_name**`.
+Each site has it's own Docker image however all 6 sites have also been combined into one docker image which can be found at iweinberger/all-baderlab-sites(https://hub.docker.com/repository/docker/iweinberger/all-baderlab-sites/general)
 
 POW:
   POW is a website that allows users to predict PDZ domain-peptide interactions for human, mouse, worm and fly PDZ domains.
