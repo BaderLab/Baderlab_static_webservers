@@ -27,6 +27,7 @@ POW:
   - svm
   - apache2
   - apache2 cgi
+
 PRM-BD:
   PRM-DB allows users to search for a domain or protein by name, all domains from a given species, all members of a domain family, or search for combinations of these criteria.
   Software:
@@ -35,6 +36,7 @@ PRM-BD:
   - PHP
   - php-mysql
   - libapache2-mod-php
+
 DV-IMPACT:
   DV-IMPACT is a resource for the disease variants impact assessment on domain-peptide PPI networks
   Software:
@@ -43,6 +45,7 @@ DV-IMPACT:
   - PHP
   - php-mysql
   - libapache2-mod-php
+
 Pathguide:
   Pathguide is a database that contains information about 702 biological pathway related resources and molecular interaction related resources
   - apache2
@@ -50,10 +53,12 @@ Pathguide:
   - PHP
   - php-mysql
   - libapache2-mod-php
+
 MIMP:
   MIMP characterizes genetic variants such as cancer mutations that specifically alter kinase-binding sites in proteins.
   Software:
   - List incomplete (coming soon)
+
 Cytoscape wiki (old):
   Old wiki for cytoscape.
   - apache2
