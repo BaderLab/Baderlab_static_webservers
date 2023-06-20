@@ -21,4 +21,42 @@ The corresponding dockers are:
 Each docker can be downloaded and run through Docker user the command `docker run -ditp 80:80 **container_name**`
 
 POW:
-This site 
+  POW is a website that allows users to predict PDZ domain-peptide interactions for human, mouse, worm and fly PDZ domains.
+  Software:
+  - python2.7
+  - svm
+  - apache2
+  - apache2 cgi
+PRM-BD:
+  PRM-DB allows users to search for a domain or protein by name, all domains from a given species, all members of a domain family, or search for combinations of these criteria.
+  Software:
+  - apache2
+  - mySQL
+  - PHP
+  - php-mysql
+  - libapache2-mod-php
+DV-IMPACT:
+  DV-IMPACT is a resource for the disease variants impact assessment on domain-peptide PPI networks
+  Software:
+  - apache2
+  - mySQL
+  - PHP
+  - php-mysql
+  - libapache2-mod-php
+Pathguide:
+  Pathguide is a database that contains information about 702 biological pathway related resources and molecular interaction related resources
+  - apache2
+  - mySQL
+  - PHP
+  - php-mysql
+  - libapache2-mod-php
+MIMP:
+  MIMP characterizes genetic variants such as cancer mutations that specifically alter kinase-binding sites in proteins.
+  Software:
+  - List incomplete (coming soon)
+Cytoscape wiki (old):
+  Old wiki for cytoscape.
+  - apache2
+  - python2
+  - MoinMoin
+  - libapache2-mod-wsgi-py3
