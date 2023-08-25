@@ -14,9 +14,9 @@ The corresponding dockers are:
 1. POW - [iweinberger/pow](https://hub.docker.com/repository/docker/iweinberger/pow/general)
 2. PRM-DB - [iweinberger/prm-db](https://hub.docker.com/repository/docker/iweinberger/prm-db/general)
 3. pathguide - [iweinberger/pathguide](https://hub.docker.com/repository/docker/iweinberger/pathguide/general)
-5. DV-IMPACT - [iweinberger/dv-impact](https://hub.docker.com/repository/docker/iweinberger/dv-impact/general)
-6. MIMP - uncompleted
-7. cytoscape wiki - [iweinberger/cytoscape-wiki-old](https://hub.docker.com/repository/docker/iweinberger/cytoscape-wiki-old/general)
+4. DV-IMPACT - [iweinberger/dv-impact](https://hub.docker.com/repository/docker/iweinberger/dv-impact/general)
+5. MIMP - [iweinberger/mimp](https://hub.docker.com/repository/docker/iweinberger/mimp/general)
+6. cytoscape wiki - [iweinberger/cytoscape-wiki-old](https://hub.docker.com/repository/docker/iweinberger/cytoscape-wiki-old/general)
 
 Each docker can be downloaded and run through Docker user the command `docker run -ditp 80:80 **container_name**`.
 Each site has it's own Docker image however all 6 sites have also been combined into one docker image which can be found at iweinberger/all-baderlab-sites(https://hub.docker.com/repository/docker/iweinberger/all-baderlab-sites/general)
