@@ -58,7 +58,19 @@ Pathguide:
 MIMP:
   MIMP characterizes genetic variants such as cancer mutations that specifically alter kinase-binding sites in proteins.
   Software:
-  - List incomplete (coming soon)
+  - Nginx
+  - Java 8
+    - openjdk-8-jre
+    - openjdk-8-jdk
+  - Play 2.2.1
+  - R 3.6.3
+  - gcc 9.4.0
+  - Make
+  - gfortran
+  - Flex
+  - Autogen
+  - gcc-multilib
+  - Libcurl4-openssl-dev
 
 Cytoscape wiki (old):
   Old wiki for cytoscape.
