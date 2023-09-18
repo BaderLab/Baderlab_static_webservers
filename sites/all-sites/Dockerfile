@@ -1,5 +1,7 @@
 FROM ubuntu
 
+RUN HOST_IP=""
+
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt update ; apt upgrade -y
@@ -41,6 +43,7 @@ COPY ./assets/nginx-configs/ /etc/nginx/
 COPY ./assets/wikiconfig.py /usr/local/share/moin/server/
 COPY ./assets/htdocs/ /usr/lib/cgi-bin/htdocs/
 COPY ./assets/moin.cgi /usr/local/share/moin/server/moin2.cgi
+COPY ./assets/lib-files/ /usr/local/lib/python2.7/dist-packages/
 
 RUN chown -R www-data:www-data /var/www/mywiki/
 RUN wget http://static.moinmo.in/files/moin-1.9.11.tar.gz -O /root/moin.tgz
@@ -53,7 +56,7 @@ RUN mv /usr/local/share/moin/server/moin2.cgi /usr/local/share/moin/server/moin.
 RUN mkdir --parents /root/R/build/
 RUN mkdir --parents /root/gcc/build/
 
-RUN a2ensite POW.conf PRM.conf DV-IMPACT.conf pathguide.conf greet.conf
+RUN a2ensite POW.conf PRM.conf DV-IMPACT.conf pathguide.conf greet.conf moin.conf
 RUN a2enmod php8.1
 RUN a2dissite 000-default.conf
 RUN rm -fr /var/www/html/
@@ -85,8 +88,10 @@ RUN ./configure --with-readline=no --with-x=no
 RUN make
 RUN make install
 
+WORKDIR /root/
+
 RUN mv /root/R-library/* /usr/local/lib/R/library/
 
-CMD service apache2 start ; service mysql start ; CMD service mimp start ; service nginx start ; bash /root/start.sh ; cat
+CMD service apache2 start ; service mysql start ; service mimp start ; service nginx start ; bash /root/start.sh ; cat
 
 EXPOSE 80-86
