@@ -1,0 +1,3 @@
+'/usr/lib/cgi-bin/'
+'/var/www/html'
+'svm.py' & 'svmc.so' from '/usr/local/lib/python2.7/dist-packages/'
