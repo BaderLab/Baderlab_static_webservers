@@ -1,22 +1,45 @@
 FROM ubuntu
-#stops apt asking for input during script
+
 ARG DEBIAN_FRONTEND=noninteractive
-#updates OS and installs apache2, php8.1, mysql-server, and programs to ensure compatability
+
+#Updates & Installs required programs
 RUN apt update ; apt upgrade -y
 RUN apt install -y apache2 \
         mysql-server \
         php \
         libapache2-mod-php \
-        php-mysql
-#copys old files, and start script
-COPY ./assets/apache2-configs/ /etc/apache2/
-COPY ./assets/site-assets/ /var/www/
-COPY ./assets/databases/ /root/
-COPY ./assets/start.sh /root/
-#configures apache2
-RUN a2enmod php8.1
-RUN rm -fr /var/www/html/
-#starts server
-RUN ln -sf /bin/bash /bin/sh
-CMD service apache2 start ; service mysql start ; bash /root/start.sh ; cat
+        php-mysql \
+        wget \
+        python3 \
+        phpmyadmin
+
+#Installs server files (Please contact Gary Bader(gary.bader@utoronto.ca) for server file)
+COPY ./pathguide.tgz /pathguide.tgz
+RUN tar -cvzf /pathguide.tgz
+
+RUN rm -rf /etc/apache2/*
+
+RUN mv /assets/apache2-configs/* /etc/apache2/
+RUN mv /assets/site-assets/* /var/www/
+RUN mv /assets/databases/ /root/
+RUN mv /assets/start.sh /root/
+RUN mv /assets/import.py /import.py
+RUN mv /assets/phpmyadmin/* /etc/phpmyadmin/
+
+#RUN rm -r /assets/
+#RUN rm /pathguide.tgz
+
+#Configures Apache2
+RUN a2enmod php8.1 authz_core authz_host access_compat socache_shmcb slotmem_shm dir
+RUN a2ensite 000-default.conf
+RUN rm -fr /var/www/html/ /assets
+RUN mkdir /var/log/apache2/phpmyadmin/
+
+#Configures PHPMyAdmin
+RUN phpenmod mbstring
+RUN chown -R www-data:www-data /etc/phpmyadmin/
+
+#Configures server start sequence
+CMD service apache2 start ; service mysql start ; bash /root/start.sh ; python3 /import.py ; cat
 EXPOSE 80
+EXPOSE 8080
