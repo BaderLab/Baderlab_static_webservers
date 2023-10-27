@@ -15,7 +15,7 @@ RUN apt install -y apache2 \
 
 #Installs server files (Please contact Gary Bader(gary.bader@utoronto.ca) for server file)
 COPY ./pathguide.tgz /pathguide.tgz
-RUN tar -cvzf /pathguide.tgz
+RUN tar -xvzf /pathguide.tgz
 
 RUN rm -rf /etc/apache2/*
 
