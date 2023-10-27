@@ -26,9 +26,6 @@ RUN mv /assets/start.sh /root/
 RUN mv /assets/import.py /import.py
 RUN mv /assets/phpmyadmin/* /etc/phpmyadmin/
 
-#RUN rm -r /assets/
-#RUN rm /pathguide.tgz
-
 #Configures Apache2
 RUN a2enmod php8.1 authz_core authz_host access_compat socache_shmcb slotmem_shm dir
 RUN a2ensite 000-default.conf
