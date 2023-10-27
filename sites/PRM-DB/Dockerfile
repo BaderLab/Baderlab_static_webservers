@@ -15,7 +15,7 @@ RUN apt install -y apache2 \
 
 #Installs server files (Please contact Gary Bader(gary.bader@utoronto.ca) for server files)
 COPY ./prm-db.tgz /prm-db.tgz
-RUN tar -cvzf /prm-db.tgz
+RUN tar -xvzf /prm-db.tgz
 RUN rm -rf /etc/apache2/*
 
 RUN mv /assets/apache2-configs/* /etc/apache2/
